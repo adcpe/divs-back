@@ -21,26 +21,6 @@ class DivisionFactory extends Factory
      */
     public function definition()
     {
-        $names = [
-            'HOCHSCHILD MINING',
-            'Dirección General',
-            'Finanzas',
-            'Producto',
-            'Gestión de Riesgos',
-            'Operaciones',
-            'Innovación',
-            'Producto',
-            'Logística',
-            'TI',
-            'Publicidad',
-        ];
-
-        return [
-            'name' => array_rand($names, 1)->unique(),
-            'level' => 1,
-            'employees' => rand(1,100),
-            'childen' => rand(0,2),
-            'ambassador' => rand(1,100),
-        ];
+        //
     }
 }
