@@ -17,14 +17,11 @@ class CreateDivisionsTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->integer('children');
+            $table->string('parent')->nullable();
             $table->integer('level');
             $table->integer('employees');
+            $table->string('ambassador');
             $table->timestamps();
-        });
-        
-        Schema::table('divisions', function (Blueprint $table) {
-            $table->foreignId('parent')->nullable()->constrained('divisions');
-            $table->foreignId('ambassador')->nullable()->constrained('users');
         });
     }
 
