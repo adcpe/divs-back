@@ -9,6 +9,15 @@ class Division extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'subdivisions',
+        'parent_division',
+        'level',
+        'employees',
+        'ambassador',
+    ];
+
     public function parent()
     {
         return $this->belongsTo(Division::class);
