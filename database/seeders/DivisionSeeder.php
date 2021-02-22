@@ -17,9 +17,8 @@ class DivisionSeeder extends Seeder
      */
     public function run()
     {
-        
         DB::table('divisions')->insert([
-            'name' => 'Dirección General',
+            'name' => 'CEO',
             'level' => 1,
             'employees' => rand(1,5),
             'subdivisions' => 3,
@@ -29,89 +28,122 @@ class DivisionSeeder extends Seeder
         ]);
 
         DB::table('divisions')->insert([
-            'name' => 'Finanzas',
+            'name' => 'Dirección General',
             'level' => 2,
+            'employees' => rand(1,5),
+            'subdivisions' => 3,
+            'ambassador' => User::find(rand(1,100))->name,
+            'parent_division' => 'CEO',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('divisions')->insert([
+            'name' => 'Estrategia',
+            'level' => 3,
+            'employees' => rand(2,10),
+            'subdivisions' => 3,
+            'ambassador' => User::find(rand(1,100))->name,
+            'parent_division' => 'Dirección General',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('divisions')->insert([
+            'name' => 'Crecimiento',
+            'level' => 3,
+            'employees' => rand(2,10),
+            'subdivisions' => 3,
+            'ambassador' => User::find(rand(1,100))->name,
+            'parent_division' => 'Dirección General',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        DB::table('divisions')->insert([
+            'name' => 'Finanzas',
+            'level' => 3,
             'employees' => rand(2,10),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(1)->name,
+            'parent_division' => 'Dirección General',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Producto',
-            'level' => 2,
+            'level' => 3,
             'employees' => rand(2,10),
             'subdivisions' => 2,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(1)->name,
+            'parent_division' => 'Dirección General',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Operaciones',
-            'level' => 2,
+            'level' => 3,
             'employees' => rand(2,10),
             'subdivisions' => 3,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(1)->name,
+            'parent_division' => 'Dirección General',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Gestión de Riesgos',
-            'level' => 3,
+            'level' => 4,
             'employees' => rand(10,30),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(4)->name,
+            'parent_division' => 'Operaciones',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Innovación',
-            'level' => 3,
+            'level' => 4,
             'employees' => rand(10,30),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(3)->name,
+            'parent_division' => 'Producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Logística',
-            'level' => 3,
+            'level' => 4,
             'employees' => rand(10,30),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(4)->name,
+            'parent_division' => 'Operaciones',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Tecnologías de la Información',
-            'level' => 3,
+            'level' => 4,
             'employees' => rand(10,30),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(4)->name,
+            'parent_division' => 'Operaciones',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         DB::table('divisions')->insert([
             'name' => 'Publicidad',
-            'level' => 3,
+            'level' => 4,
             'employees' => rand(10,30),
             'subdivisions' => 0,
             'ambassador' => User::find(rand(1,100))->name,
-            'parent_division' => Division::find(3)->name,
+            'parent_division' => 'Producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
