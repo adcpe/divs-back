@@ -16,8 +16,8 @@ class CreateDivisionsTable extends Migration
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->integer('children');
-            $table->string('parent')->nullable();
+            $table->integer('subdivisions');
+            $table->string('parent_division')->nullable();
             $table->integer('level');
             $table->integer('employees');
             $table->string('ambassador');
