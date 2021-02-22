@@ -22,9 +22,9 @@ use App\Models\Division;
 Route::apiResource('users', UserController::class);
 Route::apiResource('divisions', DivisionController::class);
 
-Route::get('/divisions/{id}/children', function ($id) {
+Route::get('/divisions/{id}/subdivisions', function ($id) {
   $name = Division::find($id)->name;
-  return DB::table('divisions')->where('parent', '=', $name)->select('name')->get();
+  return DB::table('divisions')->where('parent_division', '=', $name)->select('name')->get();
 });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
